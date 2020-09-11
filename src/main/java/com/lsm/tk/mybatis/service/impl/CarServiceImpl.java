@@ -1,5 +1,7 @@
 package com.lsm.tk.mybatis.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lsm.tk.mybatis.mapper.CarMapper;
 import com.lsm.tk.mybatis.entity.CarEntity;
 import com.lsm.tk.mybatis.service.ICarService;
@@ -41,5 +43,13 @@ public class CarServiceImpl implements ICarService {
     @Override
     public List<CarEntity> listCars() {
         return carMapper.selectAll();
+    }
+
+    @Override
+    public PageInfo<CarEntity> listPageCars() {
+        PageHelper.startPage(2, 1);
+        List<CarEntity> carEntityList = carMapper.selectAll();
+        PageInfo<CarEntity> page = new PageInfo<>(carEntityList);
+        return page;
     }
 }

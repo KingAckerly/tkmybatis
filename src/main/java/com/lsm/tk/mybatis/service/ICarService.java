@@ -1,5 +1,6 @@
 package com.lsm.tk.mybatis.service;
 
+import com.github.pagehelper.PageInfo;
 import com.lsm.tk.mybatis.entity.CarEntity;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface ICarService {
     CarEntity getCar(Long id);
 
     List<CarEntity> listCars();
+
+    PageInfo<CarEntity> listPageCars();
 }

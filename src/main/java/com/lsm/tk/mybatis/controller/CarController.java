@@ -1,5 +1,6 @@
 package com.lsm.tk.mybatis.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.lsm.tk.mybatis.entity.CarEntity;
 import com.lsm.tk.mybatis.service.ICarService;
 import org.springframework.web.bind.annotation.*;
@@ -37,5 +38,10 @@ public class CarController {
     @RequestMapping(value = "/listCars", method = RequestMethod.GET)
     public List<CarEntity> listCars() {
         return carService.listCars();
+    }
+
+    @RequestMapping(value = "/listPageCars", method = RequestMethod.GET)
+    public PageInfo<CarEntity> listPageCars() {
+        return carService.listPageCars();
     }
 }
