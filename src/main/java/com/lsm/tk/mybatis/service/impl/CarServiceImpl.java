@@ -52,4 +52,11 @@ public class CarServiceImpl implements ICarService {
         PageInfo<CarEntity> page = new PageInfo<>(carEntityList);
         return page;
     }
+
+    @Override
+    public int saveBatchCars(List<CarEntity> carEntities) {
+        int i = carMapper.insertList(carEntities);
+        System.out.println(carEntities);
+        return i;
+    }
 }

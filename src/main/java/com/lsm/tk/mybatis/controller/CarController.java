@@ -44,4 +44,9 @@ public class CarController {
     public PageInfo<CarEntity> listPageCars() {
         return carService.listPageCars();
     }
+
+    @RequestMapping(value = "/saveBatchCars", method = RequestMethod.POST)
+    public int saveBatchCars(@RequestBody List<CarEntity> carEntities) {
+        return carService.saveBatchCars(carEntities);
+    }
 }

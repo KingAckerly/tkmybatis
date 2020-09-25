@@ -17,4 +17,6 @@ public interface ICarService {
     List<CarEntity> listCars();
 
     PageInfo<CarEntity> listPageCars();
+
+    int saveBatchCars(List<CarEntity> carEntities);
 }
