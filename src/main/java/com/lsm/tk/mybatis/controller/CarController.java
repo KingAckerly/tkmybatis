@@ -49,4 +49,9 @@ public class CarController {
     public int saveBatchCars(@RequestBody List<CarEntity> carEntities) {
         return carService.saveBatchCars(carEntities);
     }
+
+    @RequestMapping(value = "/eraseBrandByIds", method = RequestMethod.POST)
+    public int eraseBrandByIds(@RequestBody List<Long> ids) {
+        return carService.eraseBrandByIds(ids);
+    }
 }

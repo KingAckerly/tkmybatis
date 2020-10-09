@@ -19,4 +19,6 @@ public interface ICarService {
     PageInfo<CarEntity> listPageCars();
 
     int saveBatchCars(List<CarEntity> carEntities);
+
+    int eraseBrandByIds(List<Long> ids);
 }

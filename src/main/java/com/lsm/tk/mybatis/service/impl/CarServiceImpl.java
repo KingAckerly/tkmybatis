@@ -59,4 +59,9 @@ public class CarServiceImpl implements ICarService {
         System.out.println(carEntities);
         return i;
     }
+
+    @Override
+    public int eraseBrandByIds(List<Long> ids) {
+        return carMapper.eraseBrandByIds(ids);
+    }
 }
