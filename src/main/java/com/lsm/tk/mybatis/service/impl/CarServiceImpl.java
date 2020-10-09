@@ -28,6 +28,11 @@ public class CarServiceImpl implements ICarService {
     }
 
     @Override
+    public int deleteCarBatch(List<Long> ids) {
+        return carMapper.deleteCarBatch(ids);
+    }
+
+    @Override
     public int updateCar(CarEntity carEntity) {
         String brand = "宝马";
         Example example = new Example(CarEntity.class);

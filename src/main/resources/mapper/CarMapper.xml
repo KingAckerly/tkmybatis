@@ -8,4 +8,11 @@
             where id = #{item}
         </foreach>
     </update>
+    <delete id="deleteCarBatch" parameterType="java.util.List">
+        DELETE FROM car
+        WHERE id IN
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
 </mapper>

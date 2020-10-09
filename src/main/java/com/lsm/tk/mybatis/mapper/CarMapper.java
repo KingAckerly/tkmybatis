@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface CarMapper extends Mapper<CarEntity>, MySqlMapper<CarEntity> {
     Integer eraseBrandByIds(List<Long> ids);
+
+    Integer deleteCarBatch(List<Long> ids);
 }

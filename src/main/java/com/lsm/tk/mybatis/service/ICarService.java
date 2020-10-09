@@ -10,6 +10,8 @@ public interface ICarService {
 
     int deleteCar(Long id);
 
+    int deleteCarBatch(List<Long> ids);
+
     int updateCar(CarEntity carEntity);
 
     CarEntity getCar(Long id);

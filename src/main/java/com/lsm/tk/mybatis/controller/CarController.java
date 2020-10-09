@@ -25,6 +25,11 @@ public class CarController {
         return carService.deleteCar(id);
     }
 
+    @RequestMapping(value = "/deleteCarBatch", method = RequestMethod.POST)
+    public int deleteCarBatch(@RequestBody List<Long> ids) {
+        return carService.deleteCarBatch(ids);
+    }
+
     @RequestMapping(value = "/updateCar", method = RequestMethod.POST)
     public int updateCar(@RequestBody CarEntity carEntity) {
         return carService.updateCar(carEntity);
