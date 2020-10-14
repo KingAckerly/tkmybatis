@@ -10,4 +10,6 @@ public interface CarMapper extends Mapper<CarEntity>, MySqlMapper<CarEntity> {
     Integer eraseBrandByIds(List<Long> ids);
 
     Integer deleteCarBatch(List<Long> ids);
+
+    Integer updateCarBatch(List<CarEntity> carEntities);
 }

@@ -15,4 +15,18 @@
             #{item}
         </foreach>
     </delete>
+    <update id="updateCarBatch" parameterType="java.util.List">
+        UPDATE
+        car
+        SET
+        brand =
+        <foreach collection="list" item="item" separator=" " open="CASE id" close="END">
+            WHEN #{item.id} THEN #{item.brand}
+        </foreach>
+        WHERE
+        id IN
+        <foreach collection="list" item="item" separator="," open="(" close=")">
+            #{item.id}
+        </foreach>
+    </update>
 </mapper>

@@ -23,4 +23,6 @@ public interface ICarService {
     int saveBatchCars(List<CarEntity> carEntities);
 
     int eraseBrandByIds(List<Long> ids);
+
+    void updateCarBatch(List<CarEntity> carEntities);
 }

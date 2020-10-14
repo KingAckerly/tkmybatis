@@ -59,4 +59,11 @@ public class CarController {
     public int eraseBrandByIds(@RequestBody List<Long> ids) {
         return carService.eraseBrandByIds(ids);
     }
+
+    @RequestMapping(value = "/updateCarBatch", method = RequestMethod.POST)
+    public String updateCarBatch(@RequestBody List<CarEntity> carEntities) {
+        carService.updateCarBatch(carEntities);
+        return "SUCCESS";
+    }
+
 }
